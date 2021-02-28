@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Header = props => {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 ">
-                <a className="navbar-brand" href="#">E-commerce App </a>
+                <Link className="navbar-brand" to="/">E-commerce App </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -13,7 +14,10 @@ const Header = props => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Login & Register</a>
+                            <span className={"d-flex flex-row"}>
+                                <Link className="nav-link" to={"/account/login"}>Login</Link>
+                                <Link className="nav-link" to={"/account/register"}>Register</Link>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -26,6 +30,17 @@ const Header = props => {
                         </div>
                     </div>
                 </form>
+                <div>
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Bascet (0)
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a className="dropdown-item" href="#">LIST</a>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     );
